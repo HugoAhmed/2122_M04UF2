@@ -8,6 +8,14 @@ function App() {
   return (
     <div className="App">
 	<Titulito />
+	<nav>
+	<ul>
+	<li><a href="plantilla.html"id="home-link">Portada</a></li>
+	<li><a href="contacto.html" id="contacto-link">Contacto</a></li>
+	<li><a href="cv.html"id="cv-link">CV</a></li>
+	<li><a href="juego.html"id="juego-link">Juego</a></li>
+	</ul>
+	</nav>
 	<Titulito_cont/>
 	<Titulito_cont2/>
 	<Twitter/>
