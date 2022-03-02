@@ -2,7 +2,7 @@ import './plantilla.css'
 import Titulito from './titulito.js';
 import Titulito_cont from './Titulito_cont.js';
 import Titulito_cont2 from './titulito_cont2.js';
-import Twitter from './twitter.js';
+import Ultimos_tuits from './ultimos_tuits.js';
 import Piesito from './piesito.js';
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
 	</nav>
 	<Titulito_cont/>
 	<Titulito_cont2/>
-	<Twitter/>
+	<Ultimos_tuits/>
 	<Piesito/>
       <header className="App-header">
         <p>
