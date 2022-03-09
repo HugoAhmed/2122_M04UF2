@@ -1,3 +1,4 @@
+import react from 'react';
 import './plantilla.css'
 import Titulito from './titulito.js';
 import Titulito_cont from './Titulito_cont.js';
