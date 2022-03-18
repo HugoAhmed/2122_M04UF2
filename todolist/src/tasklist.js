@@ -1,11 +1,29 @@
-import Taskitem from './taskitem.js'
-function tasklist()
-{
-return
-(
-<ul>
-<taskitem task="Aprender React" />
-<taskitem task="Aprobar sistemas" />
-);
+import React from 'react';
+import Taskitem from './taskitem';
+
+class tasklist extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			tasks : []
+		};
+	}
+
+	render ()
+	{
+		let t = this.state.tasks;
+
+		let tasks = [];
+		for (let i = 0; i < t.length; i++){
+			tasks.push(<taskitem task={t[i]} key={i} />);
+		}
+
+		return (
+		<ul>
+			{tasks}
+		</ul>
+		);
+	}
 }
+
 export default tasklist;
