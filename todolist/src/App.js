@@ -21,14 +21,24 @@ function App() {
 		});
 	}
 
+import './App.css';
+import Title from './title';
+import TaskForm from './taskform';
+import TaskList from './tasklist';
+
+class App() extends React.Component{
 	render(){
 		return (
 <div className="App">
 <Title />
 <TaskForm addTask={this.addTask} />
 <TaskList tasks={this.state.tasks} />
+<TaskForm />
+<TaskList />
 </div>
 		);
   }
 }
+export default App;
+
 export default App;

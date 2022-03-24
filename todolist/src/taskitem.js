@@ -1,4 +1,5 @@
 import RemoveTask from './removetask';
+import RemoveTask from './RemoveTask';
 
 function taskitem (props)
 {
@@ -7,3 +8,6 @@ function taskitem (props)
 	);
 
 }export deafult taskitem;
+}
+
+export default taskitem;

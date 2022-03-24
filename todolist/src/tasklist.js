@@ -24,4 +24,6 @@ class tasklist extends React.Component{
 		</ul>
 		);
 	}
-}export default tasklist;
+}
+
+export default tasklist;

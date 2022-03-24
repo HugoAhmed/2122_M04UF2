@@ -8,4 +8,4 @@ return (
 );
 
 }
-export default Title;
+export default title;

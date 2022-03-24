@@ -1,6 +1,7 @@
+
 import React from 'react';
 
-class taskinput extends React.Component{
+class tasktnput extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
@@ -24,5 +25,6 @@ class taskinput extends React.Component{
 		</label>
 		);
 	}
-} 
+}
+
 export default taskinput;
