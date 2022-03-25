@@ -15,7 +15,8 @@ class tasklist extends React.Component{
 
 		let tasks = [];
 		for (let i = 0; i < t.length; i++){
-			tasks.push(<TaskItem task={t[i]} key={i} />);
+			tasks.push(<TaskItem task={t[i]} key={i} id_item={i}
+			removeTask={this.props.removeTask}/>);
 		}
 
 		return (

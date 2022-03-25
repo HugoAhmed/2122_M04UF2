@@ -1,5 +1,5 @@
 
-function Title()
+function title()
 {
 return (
 <header>

@@ -4,7 +4,7 @@ import TaskForm from './taskform';
 import TaskList from './tasklist';
 import './App.css';
 
-function App() {
+class App() extends React.Component{
   constructor(props){
 		super(props);
 		this.state = {
@@ -21,24 +21,23 @@ function App() {
 		});
 	}
 
-import './App.css';
-import Title from './title';
-import TaskForm from './taskform';
-import TaskList from './tasklist';
+	function removeTask (id_task, patata)
+	{
+		removeTask = id_task =>
+		{
+			this.state.tasks.splice(id_task, 1);
+			this.setState({ tasks: this.state.tasks});
+		}
+	}
 
-class App() extends React.Component{
 	render(){
 		return (
 <div className="App">
 <Title />
 <TaskForm addTask={this.addTask} />
 <TaskList tasks={this.state.tasks} />
-<TaskForm />
-<TaskList />
 </div>
 		);
   }
 }
-export default App;
-
 export default App;

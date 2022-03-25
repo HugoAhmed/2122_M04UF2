@@ -1,13 +1,11 @@
 import RemoveTask from './removetask';
-import RemoveTask from './RemoveTask';
 
 function taskitem (props)
 {
 	return(
-		<li>{props.task} <RemoveTask /></li>
+		<li>{props.task} <RemoveTask removeTask={props.removeTask}/></li>
 	);
 
-}export deafult taskitem;
 }
 
 export default taskitem;

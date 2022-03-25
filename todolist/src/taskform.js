@@ -2,8 +2,6 @@ import React from 'react';
 
 import TaskInput from './taskinput';
 import TaskSubmit from './tasksubmit';
-import TaskInput from './TaskInput';
-import TaskSubmit from './TaskSubmit';
 
 class taskform extends React.Component{
 	constructor(props){
@@ -35,7 +33,6 @@ class taskform extends React.Component{
 		return (
 			<form onSubmit={this.handleSubmit}>
 			<TaskInput value={this.state.task} handleChange={this.handleChange} />
-			<TaskInput handleChange={this.handleChange} />
 			<TaskSubmit />
 			</form>
 		);
@@ -43,4 +40,3 @@ class taskform extends React.Component{
 	}
 }
 export default taskform;
-}

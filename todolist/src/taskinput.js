@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-class tasktnput extends React.Component{
+class taskinput extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
