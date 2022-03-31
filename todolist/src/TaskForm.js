@@ -1,9 +1,9 @@
 import React from 'react';
 
-import TaskInput from './taskinput';
-import TaskSubmit from './tasksubmit';
+import TaskInput from './TaskInput';
+import TaskSubmit from './TaskSubmit';
 
-class taskform extends React.Component{
+class TaskForm extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
@@ -40,4 +40,4 @@ class taskform extends React.Component{
 }
 
 
-export default taskform;
+export default TaskForm;

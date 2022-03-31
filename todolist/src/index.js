@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+//import './index.css';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Title from './title.js';
-import Taskform from './taskform.js'
+
 ReactDOM.render(
   <React.StrictMode>
-  <Title />
-  <Taskform />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

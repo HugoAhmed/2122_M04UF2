@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskItem from './taskitem';
+import TaskItem from './TaskItem';
 
 import List from '@mui/material/List';
 
@@ -29,4 +29,4 @@ class TaskList extends React.Component{
 	}
 }
 
-export default tasklist;
+export default TaskList;

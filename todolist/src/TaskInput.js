@@ -2,7 +2,7 @@ import React from 'react';
 
 import TextField from '@mui/material/TextField';
 
-class taskinput extends React.Component{
+class TaskInput extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
@@ -26,4 +26,4 @@ class taskinput extends React.Component{
 	}
 }
 
-export default taskinput;
+export default TaskInput;

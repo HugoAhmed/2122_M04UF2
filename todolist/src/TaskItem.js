@@ -1,4 +1,4 @@
-import RemoveTask from './removetask';
+import RemoveTask from './RemoveTask';
 
 import ListItem from '@mui/material/ListItem';
 
@@ -10,4 +10,4 @@ function TaskItem (props)
 
 }
 
-export default taskitem;
+export default TaskItem;

@@ -1,8 +1,8 @@
 import React from 'react';
 //import './App.css';
-import Title from './title';
-import TaskForm from './taskform';
-import TaskList from './tasklist';
+import Title from './Title';
+import TaskForm from './TaskForm';
+import TaskList from './TaskList';
 
 class App extends React.Component{
 	constructor(props){

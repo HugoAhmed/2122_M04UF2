@@ -2,7 +2,7 @@ import Button from '@mui/material/Button';
 
 import DeleteIcon from '@mui/icons-material/Delete';
 
-function removetask (props)
+function RemoveTask (props)
 {
 	return (
 		<Button startIcon={<DeleteIcon />} onClick={function (event){
@@ -13,4 +13,4 @@ function removetask (props)
 
 }
 
-export default removetask;
+export default RemoveTask;
