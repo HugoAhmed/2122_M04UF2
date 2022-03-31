@@ -1,7 +1,9 @@
 import React from 'react';
 import TaskItem from './taskitem';
 
-class tasklist extends React.Component{
+import List from '@mui/material/List';
+
+class TaskList extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
@@ -15,14 +17,14 @@ class tasklist extends React.Component{
 
 		let tasks = [];
 		for (let i = 0; i < t.length; i++){
-			tasks.push(<TaskItem task={t[i]} key={i} id_item={i}
-			removeTask={this.props.removeTask}/>);
+			tasks.push(<TaskItem task={t[i]} key={i} id_task={i}
+				removeTask={this.props.removeTask} />);
 		}
 
 		return (
-		<ul>
+		<List>
 			{tasks}
-		</ul>
+		</List>
 		);
 	}
 }

@@ -19,7 +19,6 @@ class taskform extends React.Component{
 		this.setState({
 			task: this.state.task
 		});
-		console.log(this.state.task);
 	}
 
 	handleChange = (event) => {
@@ -39,4 +38,6 @@ class taskform extends React.Component{
 
 	}
 }
+
+
 export default taskform;
