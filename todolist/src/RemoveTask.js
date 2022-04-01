@@ -12,7 +12,7 @@ class RemoveTask extends react.Component
 		super(props);
 		this.state = 
 		{ 
-						open: false};
+			open: false};
 		}
 	handleOnClick = ()=>
 	{
@@ -48,12 +48,12 @@ class RemoveTask extends react.Component
 				{'Estas seguro?'}
 					</DialogTitle>
 			<DialogAction>
-				<Button onClick={this.handleDelete}>
-					confirmar
-						</Button>
-				<Button onClick={this.handleClose}> 
-
+				<Button onClick={this.handleClose}>
 					Cancelar
+						</Button>
+				<Button onClick={this.handleDelete}> 
+
+					Confirmar
 					</Button>
 
 			</DialogAction>
