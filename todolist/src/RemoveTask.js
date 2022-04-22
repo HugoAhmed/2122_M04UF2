@@ -1,69 +1,69 @@
-import react from 'react';
+import React from 'react';
+
 import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog'
+
 import DeleteIcon from '@mui/icons-material/Delete';
-import DialogAction from '@mui/material/DialogActions';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-class RemoveTask extends react.Component
+class RemoveTask extends React.Component 
 {
 	constructor (props){
 		super(props);
-		this.state = 
-		{ 
-			open: false};
+
+		this.state = {
+			open: false
 		}
-	handleOnClick = ()=>
-	{
-	this.setState({open: true });
-	}
-	handleClose = () => 
-	{
-	this.setState({open:false});
-	}
-	handleDelete = () =>
-	{
-	this.props.removeTask(this.props.task_id);
-	this.setState({open:false});
 	}
 
+	openDialog = () => {
+		this.state.open = true;
+		this.setState({
+			open: this.state.open
+		});
+	};
 
- render() {
- 	return (
-	<div>
-		<Button variant="contained" 
-				startIcon=<DeleteIcon /> 
-				onClick={this.handleOnClick}>	
+	closeDialog = () => {
+		this.state.open = false;
+		this.setState({
+			open: this.state.open
+		});
+	};
 
-		Eliminar
-		 
-		</Button>
+	removeTask = () => {
+		this.props.removeTask(this.props.id_task);
+		this.closeDialog();
+	};
 
-		<Dialog  
-			open={this.state.open}
-			onClose={this.handleClose}
-			>
-			<DialogTitle>
-				{'Estas seguro?'}
-					</DialogTitle>
-			<DialogAction>
-				<Button onClick={this.handleClose}>
-					Cancelar
-						</Button>
-				<Button onClick={this.handleDelete}> 
 
-					Confirmar
-					</Button>
 
-			</DialogAction>
+
+
+	render (){
+		return (
+		<div>
+		<Button startIcon={<DeleteIcon />} onClick={this.openDialog}>BORRAR</Button>
+
+		<Dialog open={this.state.open} onClose={this.closeDialog}>
+		<DialogTitle>Borrar tarea</DialogTitle>
+		<DialogContent>
+		<DialogContentText>
+			¿Quieres borrar "NOMBRE TAREA"?
+		</DialogContentText>
+		</DialogContent>
+		<DialogActions>
+		<Button onClick={this.closeDialog}>No</Button>
+		<Button startIcon={<DeleteIcon />} variant="contained" color="error" onClick={this.removeTask}>Sí</Button>
+		</DialogActions>
 		</Dialog>
-</div>
+		</div>
 
-
-
-);
+		);
+	}
 
 }
-}
+
 export default RemoveTask;
