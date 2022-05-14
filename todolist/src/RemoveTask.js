@@ -51,12 +51,12 @@ class RemoveTask extends React.Component
 		<DialogTitle>Borrar tarea</DialogTitle>
 		<DialogContent>
 		<DialogContentText>
-			Â¿Quieres borrar "NOMBRE TAREA"?
+			¿Quieres borrar "NOMBRE TAREA"?
 		</DialogContentText>
 		</DialogContent>
 		<DialogActions>
 		<Button onClick={this.closeDialog}>No</Button>
-		<Button startIcon={<DeleteIcon />} variant="contained" color="error" onClick={this.removeTask}>SÃ­</Button>
+		<Button startIcon={<DeleteIcon />} variant="contained" color="error" onClick={this.removeTask}>Sí</Button>
 		</DialogActions>
 		</Dialog>
 		</div>

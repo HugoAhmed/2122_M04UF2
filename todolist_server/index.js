@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 const http = require("http");
 
 let mongo_client = require("mongodb").MongoClient;
@@ -38,6 +36,13 @@ http.createServer(function(req, res){
 
 		req.on('end', function(){
 			console.log(task);
+			let data = JSON.parse(task);
+			if (data.task != undefined){
+				db.collection("tasks").insertOne({'task':data.task});
+			}
+			else if (data.delete != undefined){
+
+			}
 		});
 
 		return;

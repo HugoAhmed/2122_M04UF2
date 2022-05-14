@@ -10,39 +10,19 @@ class App extends React.Component{
 		this.state = {
 			tasks: []
 		};
-
-		const fetchData = async () => {
-			try{
-				const res = await fetch("http://10.40.1.218:3030/");
-				const json = await res.json();
-				console.log(json);
-				this.setTasks(json);
-			}
-			catch(error){
-				console.log("error");
-			}
-
-		};
 	}
 
 	componentWillMount(){
-		fetch("http://10.40.1.218:3030/")
+		fetch("http://192.168.1.177:3030/")
 			.then(response => response.json())
-			.then(data => {
-				for (let i = 0; i < data.length; i++)
-					this.state.tasks.push(data[i].task);
-				this.setState({
-					tasks: this.state.tasks
-				});
-			});
+			.then(data => this.setTasks(data));
 	}
 
 	setTasks = data => {
-		let tasks = [];
+		console.log(data);
 		for (let i = 0; i < data.length; i++)
-			tasks.push(data[i].task);
+			this.state.tasks.push(data[i].task);
 
-		this.state.tasks = tasks;
 		this.setState({
 			tasks: this.state.tasks
 		});
@@ -54,9 +34,9 @@ class App extends React.Component{
 			tasks: this.state.tasks
 		});
 
-		fetch('http://10.40.1.218:3030/', {
+		fetch('http://192.168.1.177:3030/', {
 			method: 'POST',
-			body: task
+			body: '{"task":"'+task+'"}'
 		});
 	}
 
