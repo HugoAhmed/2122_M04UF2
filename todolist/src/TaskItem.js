@@ -1,13 +1,18 @@
-import RemoveTask from './RemoveTask';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 
-import ListItem from '@mui/material/ListItem';
+import RemoveTask from "./RemoveTask";
 
-function TaskItem (props)
-{
-	return(
-		<ListItem>{props.task} <RemoveTask id_task={props.id_task} removeTask={props.removeTask}/></ListItem>
+function Task(props){
+	return (
+		<ListItemButton>
+			<ListItemText primary={props.task} />
+			<RemoveTask task_id={props.task_id}
+				task={props.task}
+				order={props.order} 
+				removeTask={props.removeTask} 
+			/>
+		</ListItemButton>
 	);
-
 }
-
-export default TaskItem;
+export default Task;

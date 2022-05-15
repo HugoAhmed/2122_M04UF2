@@ -1,58 +1,61 @@
+#!/usr/bin/node
+
 const http = require("http");
 
 let mongo_client = require("mongodb").MongoClient;
-let ObjectId = require("mongodb").ObjectId;
-
 let url = "mongodb://localhost/";
-
+let ObjectId = require("mongodb").ObjectID;
 let db;
 
-console.log("Iniciando script mongo-http");
+console.log("Iniciando server mongo-http");
 
 mongo_client.connect(url, function(error, conn){
 	console.log("Dentro de MongoDB");
-
-	if (error){
-		console.log("ERROR!!!");
-		return;
-	}
-
-	db = conn.db("todolist");
+		if (error){
+			console.log("No se ha podido acceder a Mongo :\(");
+			return;
+		}
+		db = conn.db("todolist");
 });
 
-http.createServer(function(req, res){
+http.createServer(function(req, res) {
 	res.writeHead(200, {
-		'Content-Type': 'application/json',
-		'Access-Control-Allow-Origin': '*',
-		'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+      		'Content-Type': 'application/json',
+      		'Access-Control-Allow-Origin': '*',
+      		'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
 	});
-
-	if (req.method == "POST"){
-
-		let task = "";
-		req.on('data', function(chunk){
+	if (req.method == "POST") {
+		let task = [];
+		req.on('data', function(chunk) {
 			task += chunk;
 		});
 
-		req.on('end', function(){
-			console.log(task);
-			let data = JSON.parse(task);
-			if (data.task != undefined){
-				db.collection("tasks").insertOne({'task':data.task});
+		req.on('end', function() {
+			task = JSON.parse(task);		
+			
+			if (task.remove == "false") {
+				db.collection("tasks").insertOne({"task":task.tasks});				
+				let aux = db.collection("tasks").find();			
+				let aux2;
+				aux.toArray(function(err,doc) {
+					aux2  = JSON.stringify(doc);
+					res.end(aux2);
+					return;
+				});
 			}
-			else if (data.delete != undefined){
-
-			}
+			else {
+				aux = new ObjectId(task.task_id);	
+				let id =  {_id: aux};
+				db.collection("tasks").deleteOne(id);
+			}	
 		});
-
 		return;
-	}
-
-	let tasks = db.collection("tasks").find();
-	tasks.toArray(function(err, data){
-		let tasks_string = JSON.stringify(data);
-		res.write(tasks_string);
-		res.end();
-	});
-
+	}	
+	let task_obj = db.collection("tasks").find();
+	let json;
+	task_obj.toArray(function(err,data){
+		json = JSON.stringify(data);
+		res.end(json);
+		return;});
+	return;
 }).listen(3030);
