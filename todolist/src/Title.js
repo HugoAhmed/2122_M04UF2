@@ -1,9 +1,11 @@
+import './Title.css';
+
 
 function Title ()
 {
 	return (
 		<header>
-			<h1>ToDo App en React</h1>
+			<h1 id="Todo">ToDo App en React</h1>
 		</header>
 	);
 
